@@ -1,15 +1,28 @@
-const fibonacci = function(f_num) {
-    f_num = f_num - 1;
-    const first4 = [1,1,2,3];
+const fibonacci = function(x) {
     
-    if (f_num <= 3) {
-        return first4[f_num];
-    }
-    for (let i = 4; i <= f_num; i++){
-        first4.push(first4[i] + first4[i-1]);
-    }
-    return first4[f_num];
-};
+    const first4 = [1,1,2,3];
+    y = (x - 1);
+
+
+if (y < 4 && y > 0){
+    return first4[y];
+}
+
+if (x == 0){
+    return 0;
+}
+
+if (x < 0){
+    return 'OOPS';
+}
+
+for (let i = x; i >= 4; i--){
+    first4.push(first4[first4.length - 1] + first4[first4.length - 2]);
+}
+    return first4[y];
+
+}
+
 
 // Do not edit below this line
 module.exports = fibonacci;
